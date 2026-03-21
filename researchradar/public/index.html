@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchRadar | Discover Papers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-radial"></div>
+    <div class="radar-glow"></div>
+
+    <nav class="glass-nav">
+        <a href="index.html" class="logo">
+            <span class="radar-icon">◎</span>
+            Research<span>Radar</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active">Discover</a></li>
+            <li><a href="trending.html">Trending</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <button class="nav-mobile-btn" id="mobile-menu-btn">☰</button>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero-section">
+            <header>
+                <h1 class="fade-in">Scan the Horizon of <span>Knowledge</span></h1>
+                <p class="fade-in delay-1">Search 250M+ scholarly works. Filter by year, access type, country, and more — completely free.</p>
+            </header>
+
+            <div class="search-container fade-in delay-2">
+                <div class="search-bar glass-box">
+                    <input type="text" id="search-input" placeholder="Search topics, authors, institutions, or DOI..." autocomplete="off">
+                    <button class="search-btn" id="search-btn">Scan Now</button>
+                </div>
+            </div>
+
+            <div class="hero-stats fade-in delay-2">
+                <div class="hero-stat">
+                    <span class="hero-stat-num">250M+</span>
+                    <span class="hero-stat-label">Scholarly Works</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">Free</span>
+                    <span class="hero-stat-label">No Account Needed</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">Live</span>
+                    <span class="hero-stat-label">Real-time Data</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (hidden until search) -->
+        <section class="results-section hidden" id="results-section">
+            <div class="results-wrapper">
+
+                <!-- Filters Sidebar -->
+                <aside class="filters-panel glass-box" id="filters-panel">
+                    <div class="filters-header">
+                        <h3>Refine Results</h3>
+                        <button class="filters-close" id="filters-close">✕</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by">
+                            <option value="relevance_score:desc">Most Relevant</option>
+                            <option value="cited_by_count:desc">Most Cited</option>
+                            <option value="publication_date:desc">Newest First</option>
+                            <option value="publication_date:asc">Oldest First</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Year Range</label>
+                        <div class="year-inputs">
+                            <input type="number" id="year-from" placeholder="From" min="1900" max="2026">
+                            <span>—</span>
+                            <input type="number" id="year-to" placeholder="To" min="1900" max="2026">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Access Type</label>
+                        <label class="toggle-label">
+                            <input type="checkbox" id="open-access-only">
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-text">Open Access Only</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="country-filter">Author Country</label>
+                        <select id="country-filter">
+                            <option value="">All Countries</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="min-citations">Min. Citations</label>
+                        <input type="number" id="min-citations" placeholder="e.g. 10" min="0">
+                    </div>
+
+                    <button class="btn-apply" id="apply-filters">Apply Filters</button>
+                    <button class="btn-clear" id="clear-filters">Clear All</button>
+                </aside>
+
+                <!-- Main Results Panel -->
+                <div class="results-panel">
+                    <div class="results-header">
+                        <div class="results-meta">
+                            <span id="results-count"></span>
+                            <span id="results-query"></span>
+                        </div>
+                        <div class="results-controls">
+                            <button class="filters-toggle" id="filters-toggle">⚙ Filters</button>
+                            <div class="view-toggle">
+                                <button class="view-btn active" id="view-list" title="List view">☰</button>
+                                <button class="view-btn" id="view-grid" title="Grid view">⊞</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="loading-state hidden" id="loading">
+                        <div class="radar-spinner"></div>
+                        <p>Scanning research databases...</p>
+                    </div>
+
+                    <div class="feedback-state hidden" id="error-state">
+                        <span class="feedback-icon">⚠</span>
+                        <p id="error-msg">Something went wrong. Please try again.</p>
+                    </div>
+
+                    <div class="feedback-state hidden" id="empty-state">
+                        <span class="feedback-icon">🔍</span>
+                        <p>No papers found. Try different keywords or adjust your filters.</p>
+                    </div>
+
+                    <div class="papers-list list-view" id="papers-list"></div>
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Paper Detail Modal -->
+    <div class="modal-overlay hidden" id="modal-overlay">
+        <div class="modal glass-box">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
