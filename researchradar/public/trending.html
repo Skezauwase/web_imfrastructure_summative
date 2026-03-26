@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchRadar | Trending Topics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-radial"></div>
+    <div class="radar-glow"></div>
+
+    <nav class="glass-nav">
+        <a href="index.html" class="logo">
+            <span class="radar-icon">◎</span>
+            Research<span>Radar</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Discover</a></li>
+            <li><a href="trending.html" class="active">Trending</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <button class="nav-mobile-btn" id="mobile-menu-btn">☰</button>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero fade-in">
+            <div class="page-hero-inner">
+                <span class="page-hero-tag">Live Data</span>
+                <h1>Trending in <span>Research</span></h1>
+                <p>Explore the hottest topics across science, technology, and academia. Click any topic to discover the latest papers.</p>
+            </div>
+        </section>
+
+        <!-- Featured Topics -->
+        <section class="trending-page-section">
+            <div class="section-label fade-in">
+                <span class="section-dot"></span>
+                Featured Fields
+            </div>
+            <div class="trending-grid featured-grid" id="featured-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- More Topics -->
+        <section class="trending-page-section">
+            <div class="section-label fade-in">
+                <span class="section-dot alt"></span>
+                More Topics
+            </div>
+            <div class="trending-grid more-grid" id="more-grid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Stats Row -->
+        <section class="trending-stats-row fade-in">
+            <div class="trending-stat-card glass-box">
+                <span class="tsc-icon">📄</span>
+                <div>
+                    <strong>250M+</strong>
+                    <span>Indexed Papers</span>
+                </div>
+            </div>
+            <div class="trending-stat-card glass-box">
+                <span class="tsc-icon">🏛️</span>
+                <div>
+                    <strong>100K+</strong>
+                    <span>Institutions</span>
+                </div>
+            </div>
+            <div class="trending-stat-card glass-box">
+                <span class="tsc-icon">🌍</span>
+                <div>
+                    <strong>200+</strong>
+                    <span>Countries</span>
+                </div>
+            </div>
+            <div class="trending-stat-card glass-box">
+                <span class="tsc-icon">🔓</span>
+                <div>
+                    <strong>50M+</strong>
+                    <span>Open Access</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/trending.js"></script>
+</body>
+</html>
