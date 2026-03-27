@@ -525,3 +525,4 @@ function escHtml(str) {
 // showLoading: resets all states before showing spinner
 // buildPageRange: generates page numbers capped at OpenAlex 200-page limit
 // classifyError: maps fetch errors to specific user-friendly messages
+// escHtml: sanitizes strings before DOM insertion to prevent XSS
