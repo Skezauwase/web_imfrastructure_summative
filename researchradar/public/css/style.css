@@ -120,12 +120,6 @@ input, select {
 .radar-icon {
     color: var(--primary);
     font-size: 1.3rem;
-    animation: radarPulse 3s ease-in-out infinite;
-}
-
-@keyframes radarPulse {
-    0%, 100% { opacity: 1; text-shadow: 0 0 8px var(--primary); }
-    50% { opacity: 0.6; text-shadow: 0 0 20px var(--primary); }
 }
 
 .nav-links {
@@ -192,10 +186,11 @@ h1 {
 }
 
 h1 span {
-    background: linear-gradient(135deg, #818cf8, #c084fc, #e879f9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #3b82f6;
+    background-clip: unset;
+    color: #3b82f6;
 }
 
 header p {

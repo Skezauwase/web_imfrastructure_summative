@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="background-radial"></div>
@@ -15,7 +16,7 @@
 
     <nav class="glass-nav">
         <a href="index.html" class="logo">
-            <span class="radar-icon">◎</span>
+            <span class="radar-icon"><i class="fa-solid fa-circle-dot"></i></span>
             Research<span>Radar</span>
         </a>
         <ul class="nav-links" id="nav-links">
@@ -23,7 +24,7 @@
             <li><a href="trending.html">Trending</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
-        <button class="nav-mobile-btn" id="mobile-menu-btn">☰</button>
+        <button class="nav-mobile-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
     </nav>
 
     <main>
@@ -67,7 +68,7 @@
                 <aside class="filters-panel glass-box" id="filters-panel">
                     <div class="filters-header">
                         <h3>Refine Results</h3>
-                        <button class="filters-close" id="filters-close">✕</button>
+                        <button class="filters-close" id="filters-close"><i class="fa-solid fa-xmark"></i></button>
                     </div>
 
                     <div class="filter-group">
@@ -122,10 +123,10 @@
                             <span id="results-query"></span>
                         </div>
                         <div class="results-controls">
-                            <button class="filters-toggle" id="filters-toggle">⚙ Filters</button>
+                            <button class="filters-toggle" id="filters-toggle"><i class="fa-solid fa-sliders"></i> Filters</button>
                             <div class="view-toggle">
-                                <button class="view-btn active" id="view-list" title="List view">☰</button>
-                                <button class="view-btn" id="view-grid" title="Grid view">⊞</button>
+                                <button class="view-btn active" id="view-list" title="List view"><i class="fa-solid fa-list"></i></button>
+                                <button class="view-btn" id="view-grid" title="Grid view"><i class="fa-solid fa-grip"></i></button>
                             </div>
                         </div>
                     </div>
@@ -136,12 +137,12 @@
                     </div>
 
                     <div class="feedback-state hidden" id="error-state">
-                        <span class="feedback-icon">⚠</span>
+                        <span class="feedback-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
                         <p id="error-msg">Something went wrong. Please try again.</p>
                     </div>
 
                     <div class="feedback-state hidden" id="empty-state">
-                        <span class="feedback-icon">🔍</span>
+                        <span class="feedback-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
                         <p>No papers found. Try different keywords or adjust your filters.</p>
                     </div>
 
@@ -155,7 +156,7 @@
     <!-- Paper Detail Modal -->
     <div class="modal-overlay hidden" id="modal-overlay">
         <div class="modal glass-box">
-            <button class="modal-close" id="modal-close">✕</button>
+            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-content" id="modal-content"></div>
         </div>
     </div>

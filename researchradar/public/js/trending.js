@@ -20,26 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Featured topics — shown large at the top
 const featuredTopics = [
-    { icon: '🧠', name: 'Large Language Models',   desc: 'Transformer architectures, GPT, BERT, and next-generation AI language systems.' },
-    { icon: '🧬', name: 'CRISPR Gene Editing',     desc: 'Precision genome editing techniques and their therapeutic applications.' },
-    { icon: '⚛️', name: 'Quantum Computing',       desc: 'Quantum algorithms, error correction, and supremacy experiments.' },
-    { icon: '🌍', name: 'Climate Change',           desc: 'Climate modeling, mitigation strategies, and environmental impact research.' },
+    { icon: '<i class="fa-solid fa-brain"></i>',          name: 'Large Language Models',   desc: 'Transformer architectures, GPT, BERT, and next-generation AI language systems.' },
+    { icon: '<i class="fa-solid fa-dna"></i>',            name: 'CRISPR Gene Editing',     desc: 'Precision genome editing techniques and their therapeutic applications.' },
+    { icon: '<i class="fa-solid fa-atom"></i>',           name: 'Quantum Computing',       desc: 'Quantum algorithms, error correction, and supremacy experiments.' },
+    { icon: '<i class="fa-solid fa-globe"></i>',          name: 'Climate Change',          desc: 'Climate modeling, mitigation strategies, and environmental impact research.' },
 ];
 
 // More topics — shown in a smaller grid
 const moreTopics = [
-    { icon: '🔬', name: 'Cancer Immunotherapy' },
-    { icon: '☀️', name: 'Renewable Energy' },
-    { icon: '👁️', name: 'Computer Vision' },
-    { icon: '🦠', name: 'Antibiotic Resistance' },
-    { icon: '🤖', name: 'Reinforcement Learning' },
-    { icon: '💉', name: 'mRNA Vaccines' },
-    { icon: '🧲', name: 'Nuclear Fusion' },
-    { icon: '🌐', name: 'Blockchain Technology' },
-    { icon: '🧪', name: 'Drug Discovery' },
-    { icon: '🧫', name: 'Stem Cell Research' },
-    { icon: '📡', name: 'Deep Space Exploration' },
-    { icon: '🦾', name: 'Robotics & Automation' },
+    { icon: '<i class="fa-solid fa-microscope"></i>',        name: 'Cancer Immunotherapy' },
+    { icon: '<i class="fa-solid fa-sun"></i>',               name: 'Renewable Energy' },
+    { icon: '<i class="fa-solid fa-eye"></i>',               name: 'Computer Vision' },
+    { icon: '<i class="fa-solid fa-virus"></i>',             name: 'Antibiotic Resistance' },
+    { icon: '<i class="fa-solid fa-robot"></i>',             name: 'Reinforcement Learning' },
+    { icon: '<i class="fa-solid fa-syringe"></i>',           name: 'mRNA Vaccines' },
+    { icon: '<i class="fa-solid fa-magnet"></i>',            name: 'Nuclear Fusion' },
+    { icon: '<i class="fa-solid fa-network-wired"></i>',     name: 'Blockchain Technology' },
+    { icon: '<i class="fa-solid fa-flask"></i>',             name: 'Drug Discovery' },
+    { icon: '<i class="fa-solid fa-flask-vial"></i>',        name: 'Stem Cell Research' },
+    { icon: '<i class="fa-solid fa-satellite-dish"></i>',    name: 'Deep Space Exploration' },
+    { icon: '<i class="fa-solid fa-gears"></i>',             name: 'Robotics & Automation' },
 ];
 
 function renderTrending() {
